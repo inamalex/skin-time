@@ -19,14 +19,7 @@ const LAYER_CONFIG = [
   { scale: 0.5, speed: 60, opacity: 0.4 }
 ];
 
-function shuffleArray<T>(array: T[]): T[] {
-  const newArray = [...array];
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
-  return newArray;
-}
+
 
 function rand(min: number, max: number) {
   return Math.random() * (max - min) + min;

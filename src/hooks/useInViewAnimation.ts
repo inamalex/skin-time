@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 export function useInViewAnimation(threshold = 0.1) {
-  const ref = useRef<HTMLElement | HTMLDivElement>(null);
+  const ref = useRef<any>(null);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {

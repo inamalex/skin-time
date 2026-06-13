@@ -24,7 +24,7 @@ const PROJECTS = [
   }
 ];
 
-const ProjectItem: React.FC<{ project: any, index: number }> = ({ project, index }) => {
+const ProjectItem: React.FC<{ project: any }> = ({ project }) => {
   const { ref, isInView } = useInViewAnimation(0.2);
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
@@ -61,7 +61,7 @@ export const ProjectShowcase: React.FC = () => {
   return (
     <section className="w-full max-w-[1200px] mx-auto px-6 py-12 flex flex-col gap-16 md:gap-24">
       {PROJECTS.map((project, idx) => (
-        <ProjectItem key={idx} project={project} index={idx} />
+        <ProjectItem key={idx} project={project} />
       ))}
     </section>
   );

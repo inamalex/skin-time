@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import logo1 from './assets/logo-1.png';
 import { Hero } from './components/Hero';
