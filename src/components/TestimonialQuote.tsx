@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Quote } from 'lucide-react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import actorImg from '../assets/actor.jpg';
