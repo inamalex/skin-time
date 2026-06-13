@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
           
           <div className="flex flex-col gap-4">
             <a href="https://www.instagram.com/its_skin_time?igsh=MW5rMGlpOWxraHRleg==" target="_blank" rel="noreferrer" className="text-base text-primary hover:text-secondary hover:font-medium transition-all">Instagram</a>
-            <a href="mailto:contact@shifafathima.com" className="text-base text-primary hover:text-secondary hover:font-medium transition-all">Email</a>
+            <a href="mailto:itsskintime01@gmail.com" className="text-base text-primary hover:text-secondary hover:font-medium transition-all">Email</a>
           </div>
         </div>
       </div>
