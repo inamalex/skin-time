@@ -6,17 +6,14 @@ const videoModules = import.meta.glob('../assets/videos/*.{mp4,webm,ogg,mov}', {
 const allVideoPaths = Object.values(videoModules).map((mod: any) => mod.default);
 const videoPaths = allVideoPaths.slice(0, 4);
 
-const DEPTH_LAYERS = 5;
-const ITEMS_PER_LAYER = 15;
+const DEPTH_LAYERS = 2;
+const ITEMS_PER_LAYER = 6;
 const MAX_WIDTH = 200;
 const MAX_HEIGHT = 300;
 
 const LAYER_CONFIG = [
-  { scale: 1.5, speed: 250, opacity: 1.0 },
-  { scale: 1.0, speed: 180, opacity: 0.85 },
-  { scale: 0.8, speed: 130, opacity: 0.7 },
-  { scale: 0.6, speed: 90, opacity: 0.55 },
-  { scale: 0.5, speed: 60, opacity: 0.4 }
+  { scale: 1.5, speed: 200, opacity: 1.0 },
+  { scale: 0.8, speed: 120, opacity: 0.7 }
 ];
 
 

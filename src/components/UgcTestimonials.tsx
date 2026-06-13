@@ -4,7 +4,7 @@ import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
 import dotKeyLogo from '../assets/brands/dotandkey.png';
 import aqualogicaLogo from '../assets/brands/aqualogica.png';
-import swissLogo from '../assets/brands/swiss.png';
+import mamaearthLogo from '../assets/brands/mamaearth.png';
 
 const testimonials = [
   {
@@ -19,8 +19,8 @@ const testimonials = [
   },
   {
     quote: "A true professional. She understood our brief instantly and added her own creative flair that made the final video pop. Highly recommended.",
-    brand: "Swiss Beauty",
-    image: swissLogo
+    brand: "Mamaearth",
+    image: mamaearthLogo
   }
 ];
 

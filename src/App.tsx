@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import logo1 from './assets/logo-1.png';
 import { Hero } from './components/Hero';
-import { Marquee } from './components/Marquee';
 import { TestimonialQuote } from './components/TestimonialQuote';
 import { Services } from './components/Services';
 import { InfiniteGallery } from './components/InfiniteGallery';
@@ -35,7 +34,6 @@ function App() {
 
       <main>
         <Hero />
-        <Marquee />
         <TestimonialQuote />
         <Services />
         <InfiniteGallery />
