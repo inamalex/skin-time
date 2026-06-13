@@ -1,26 +1,26 @@
 import React from 'react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
-// Dynamically import all videos from the assets folder
-const videoModules = import.meta.glob('../assets/videos/*.{mp4,webm,ogg,mov}', { eager: true });
-const videoUrls = Object.values(videoModules).map((mod: any) => mod.default);
+import campaignVideo from '../assets/videos/campaign.mp4';
+import skincareVideo from '../assets/videos/skincare.mp4';
+import lifestyleVideo from '../assets/videos/lifestyle.mp4';
 
-// Use the first 3 videos for the big showcase boxes
+// Use the explicit videos for the big showcase boxes
 const PROJECTS = [
   {
     title: "Brand Campaign",
     desc: "High-quality aesthetic storytelling for beauty products",
-    video: videoUrls[0] || ""
+    video: campaignVideo
   },
   {
     title: "Skincare Routine",
     desc: "Authentic demonstration and product showcase",
-    video: videoUrls[1] || ""
+    video: skincareVideo
   },
   {
     title: "Lifestyle Content",
     desc: "Engaging short-form content designed for conversion",
-    video: videoUrls[2] || ""
+    video: lifestyleVideo
   }
 ];
 

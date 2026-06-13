@@ -2,24 +2,25 @@ import React from 'react';
 import { Star, Quote } from 'lucide-react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
+import dotKeyLogo from '../assets/brands/dotandkey.png';
+import aqualogicaLogo from '../assets/brands/aqualogica.png';
+import swissLogo from '../assets/brands/swiss.png';
+
 const testimonials = [
   {
     quote: "Shifa perfectly captured our brand's aesthetic. The engagement on her reel was absolutely insane. We can't wait to work with her again!",
-    author: "Priya Sharma",
     brand: "Dot & Key",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60"
+    image: dotKeyLogo
   },
   {
     quote: "Her storytelling is next level. The UGC content she delivered felt so authentic and native to the platform. It converted beautifully.",
-    author: "Rohan Desai",
     brand: "Aqualogica",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&auto=format&fit=crop&q=60"
+    image: aqualogicaLogo
   },
   {
     quote: "A true professional. She understood our brief instantly and added her own creative flair that made the final video pop. Highly recommended.",
-    author: "Ananya Patel",
-    brand: "Rare Beauty PR",
-    image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&auto=format&fit=crop&q=60"
+    brand: "Swiss Beauty",
+    image: swissLogo
   }
 ];
 
@@ -62,14 +63,15 @@ export const UgcTestimonials: React.FC = () => {
             </p>
             
             <div className="flex items-center gap-4 mt-auto">
-              <img 
-                src={test.image} 
-                alt={test.author} 
-                className="w-12 h-12 rounded-full object-cover border-2 border-white/60 shadow-sm"
-              />
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/60 shadow-sm bg-white flex items-center justify-center p-1">
+                <img 
+                  src={test.image} 
+                  alt={test.brand} 
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div>
-                <h4 className="text-secondary font-medium text-sm">{test.author}</h4>
-                <p className="text-primary/70 text-xs mt-0.5">{test.brand}</p>
+                <h4 className="text-secondary font-medium text-base">{test.brand}</h4>
               </div>
             </div>
           </div>
