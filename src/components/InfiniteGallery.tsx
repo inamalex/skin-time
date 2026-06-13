@@ -56,6 +56,19 @@ export const InfiniteGallery: React.FC = () => {
     let lastTime = 0;
     let animationFrameId: number;
     let isCleanedUp = false;
+    let isSectionVisible = true;
+
+    // Aggressively pause the WebGL and video decoders when offscreen
+    const visObserver = new IntersectionObserver((entries) => {
+      isSectionVisible = entries[0].isIntersecting;
+      if (isSectionVisible) {
+        lastTime = performance.now();
+        videoElements.forEach(v => v.play().catch(() => {}));
+      } else {
+        videoElements.forEach(v => v.pause());
+      }
+    }, { threshold: 0 });
+    visObserver.observe(container);
 
     // Load all videos into memory
     const loadVideos = () => {
@@ -212,6 +225,9 @@ export const InfiniteGallery: React.FC = () => {
 
     function animate() {
       if (isCleanedUp) return;
+      animationFrameId = requestAnimationFrame(animate);
+      if (!isSectionVisible) return;
+
       const now = performance.now();
       const dt = Math.min(40, now - lastTime) / 1000;
       lastTime = now;
@@ -242,11 +258,11 @@ export const InfiniteGallery: React.FC = () => {
       }
       
       renderer.render(scene, camera);
-      animationFrameId = requestAnimationFrame(animate);
     }
 
     return () => {
       isCleanedUp = true;
+      visObserver.disconnect();
       window.removeEventListener("resize", resize);
       
       cancelAnimationFrame(animationFrameId);
